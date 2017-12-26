@@ -1,0 +1,36 @@
+<div *ngIf='id' class="alert alert-info" style="padding:5px; position: relative; left: 70px;">
+  <div id="content" [@accessPanel]='state'><h3>Student with id : {{id}} has no access</h3></div>
+</div>
+<div class="container" style="height:700px;width:1000px">
+<h3><b>Search<input type="text" class="form-control" name='searchText' placeholder="Filter by name" [(ngModel)]="searchText"/></b></h3>
+<br>
+	<div class="col-md-16">
+		<div class="panel panel-primary">
+      <div class="panel-heading">                
+        <h2 class="panel-title">Aspirants</h2>  
+      </div>
+  <table *ngIf='students' class="table table-hover">    
+    <thead class="thead-dark">
+      <tr>
+        <th>S.No.</th>
+        <th>Name</th>
+        <th>Branch</th>
+        <th>College</th>
+        <th>Perentage</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let student of students | filter : searchText">
+        <td><a [routerLink]="['/details' , student.id]" (click)="getId(student.id)"> {{student.id}} </a></td>
+        <td><input type="button" value="{{student.Name}}" class="btn form-control" [myresponse]='student.Name' /></td>
+        <td><input type="button" value="{{student.Branch}}" class="btn form-control" [myresponse]='student.Branch'/></td>
+        <td><input type="button" value="{{student.College}}" class="btn form-control" [myresponse]='student.College'/></td>
+        <td><input type="button" class="btn form-control" value="{{student.Percentage | percent:'2.2-2'}}" (click)="display(student.Percentage)" [mybutton]='student.Percentage'/></td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+</div>
+</div>
+<!--  -->
+  

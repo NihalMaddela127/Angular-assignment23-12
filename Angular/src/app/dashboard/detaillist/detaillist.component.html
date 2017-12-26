@@ -1,0 +1,26 @@
+<div class="alert alert-info" style="padding:5px; position: relative; left: 70px;">
+    <div id="content" [@movePanel]='state'><h3>Student with id : {{student.id}} has access</h3></div>
+</div>
+<div class="col-md-4"  style="position:relative; top:30px; left:50px">
+  <div class="panel panel-primary">
+      <div class="panel-heading">
+          <h4 class="text-center">
+              Student Details</h4>
+      </div>
+      <div class="panel-body text-center">
+          <p class="lead">
+              <strong></strong></p>
+      </div>
+      <ul class="list-group list-group-flush text-center">
+          <li class="list-group-item"><i class="icon-ok text-primary"></i>Student Id : {{student.id}}</li>
+          <li class="list-group-item"><i class="icon-ok text-primary"></i>Name : {{student.Name}}</li>
+          <li class="list-group-item"><i class="icon-ok text-primary"></i>Branch : {{student.Branch}}</li>
+          <li class="list-group-item"><i class="icon-ok text-primary"></i>College : {{student.College}}</li>
+          <li class="list-group-item"><i class="icon-ok text-primary"></i>Percentage : {{student.Percentage | percent:'2.2-2'}}</li>
+      </ul>
+      <div class="panel-footer">
+          <a class="btn btn-lg btn-block btn-Primary" [routerLink]="['/students']">Back to Students page</a>
+      </div>
+  </div>
+</div>
+<router-outlet></router-outlet>

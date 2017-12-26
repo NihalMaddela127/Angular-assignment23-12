@@ -1,0 +1,4 @@
+.table tr td input.active {
+    background-color:randomcolor !important;
+    color: white;
+  }
